@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34581453-0131-4340-A56F-CD0C0D1E88A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATT.WinRTSDK</RootNamespace>
+    <AssemblyName>ATT.WinRTSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ATT.WinRTSDK.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ATT.WinRTSDK.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationService.cs" />
+    <Compile Include="Entities\SpeechResponseRaw.cs" />
+    <Compile Include="Entities\WapPushResponse.cs" />
+    <Compile Include="Entities\InboundSmsMessage.cs" />
+    <Compile Include="Entities\InboundSms.cs" />
+    <Compile Include="Entities\InboundSmsMessageList.cs" />
+    <Compile Include="Entities\InboundSmsMessageListRoot.cs" />
+    <Compile Include="Entities\MmsResponse.cs" />
+    <Compile Include="Entities\MmsResponseRaw.cs" />
+    <Compile Include="Entities\DeliveryInfo.cs" />
+    <Compile Include="Entities\DeliveryInfoList.cs" />
+    <Compile Include="Entities\DeliveryStatus.cs" />
+    <Compile Include="Entities\NBest.cs" />
+    <Compile Include="Entities\OutboundSmsRaw.cs" />
+    <Compile Include="Entities\PolicyExceptionEntity.cs" />
+    <Compile Include="Entities\Recognition.cs" />
+    <Compile Include="Entities\RequestError.cs" />
+    <Compile Include="Entities\ResponseEntityBase.cs" />
+    <Compile Include="Entities\ServiceExceptionEntity.cs" />
+    <Compile Include="Entities\SpeechResponse.cs" />
+    <Compile Include="Entities\WapPushResponseRaw.cs" />
+    <Compile Include="MmsPriority.cs" />
+    <Compile Include="MmsService.cs" />
+    <Compile Include="ScopeType.cs" />
+    <Compile Include="Entities\OAuthToken.cs" />
+    <Compile Include="Entities\AttServiceSettings.cs" />
+    <Compile Include="AttRestService.cs" />
+    <Compile Include="SpeechService.cs" />
+    <Compile Include="Utils\ContentTypeMapping.cs" />
+    <Compile Include="Utils\HttpHelper.cs" />
+    <Compile Include="Utils\JsonParser.cs" />
+    <Compile Include="Entities\InvalidResponseException.cs" />
+    <Compile Include="Entities\OAuthTokenRaw.cs" />
+    <Compile Include="Entities\OutboundSms.cs" />
+    <Compile Include="Entities\ResourceReferenceRaw.cs" />
+    <Compile Include="Entities\SMSResponseRaw.cs" />
+    <Compile Include="Entities\SmsResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmsService.cs" />
+    <Compile Include="Utils\HttpPropertyList.cs" />
+    <Compile Include="Utils\BinaryFileUtils.cs" />
+    <Compile Include="Utils\PhoneNumberConverter.cs" />
+    <Compile Include="Utils\ScopeList.cs" />
+    <Compile Include="WapPushService.cs" />
+    <Compile Include="XSpeechContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATT.Utility\ATT.Utility.csproj">
+      <Project>{e7d5b81d-1362-4fd1-8a5c-988aed16c71e}</Project>
+      <Name>ATT.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.WindowsRuntime">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Windows.winmd</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
